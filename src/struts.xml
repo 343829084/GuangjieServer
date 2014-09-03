@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="unhandledException">/error.json</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="unhandledException" />
+		</global-exception-mappings>
+	</package>
+
+	<package name="shopapi" namespace="/shopapi" extends="struts-default">
+		<global-results>
+			<result name="unhandledException">/error.json</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="unhandledException" />
+		</global-exception-mappings>
+
+		<action name="getShopInfo"
+                class="com.taobao.guangjie.action.shop.ShopInfoAction"></action>
+		<action name="getSpecialShopList"
+			class="com.taobao.guangjie.action.shop.SpecialShopListAction"></action>
+		<action name="getPopularItems"
+			class="com.taobao.guangjie.action.shop.PopularItemsAction"></action>
+		<action name="getPopularItemsByShopId"
+			class="com.taobao.guangjie.action.shop.PopularItemsByShopIdAction"></action>
+		<action name="getBandCategory"
+			class="com.taobao.guangjie.action.shop.BandCategoryAction"></action>
+		<action name="getShopsByCategory"
+			class="com.taobao.guangjie.action.shop.GetShopsByCategoryAction"></action>
+		<action name="getFunShops" class="com.taobao.guangjie.action.shop.FunShopsAction"></action>
+		<action name="getAllShopNames"
+			class="com.taobao.guangjie.action.shop.AllShopNameAction"></action>
+	</package>
+
+	<package name="couponapi" namespace="/couponapi" extends="struts-default">
+		<global-results>
+			<result name="unhandledException">/error.json</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="unhandledException" />
+		</global-exception-mappings>
+		<action name="getCouponList" class="com.taobao.guangjie.action.shop.CouponListAction"></action>
+	</package>
+
+	<package name="searchapi" namespace="/searchapi" extends="struts-default">
+		<global-results>
+			<result name="unhandledException">/error.json</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="unhandledException" />
+		</global-exception-mappings>
+		<action name="searchTag"
+			class="com.taobao.guangjie.action.search.SearchTagAction"></action>
+	</package>
+
+	<package name="locateapi" namespace="/locateapi" extends="struts-default">
+		<global-results>
+			<result name="unhandledException">/error.json</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="unhandledException" />
+		</global-exception-mappings>
+		<action name="locate" class="com.taobao.guangjie.action.locate.LocateAction"></action>
+		<action name="getRoute" class="com.taobao.guangjie.action.locate.RouteAction"></action>
+	</package>
+
+</struts>    
